@@ -1,0 +1,6 @@
+spacy
+spellchecker
+nltk
+sklearn
+pandas
+
