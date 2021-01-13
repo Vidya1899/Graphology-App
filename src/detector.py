@@ -410,15 +410,15 @@ def runInference(uniqueFilename):
     if(flag1<1 and flag2<1 and flag4<2 and flag5<2 and (flag8>-0.2 or flag8<0.2)):
         return {"Heading":"Normal", "content":contentDictionary["Normal"]}
     elif(flag8>0.8 or flag7>2):
-        return "Potential"
+        #return "Potential"
         return {"Heading":"Potential", "content":contentDictionary["Potential"]}
     elif((flag8>0.8 or flag4>0) or total>0):
-        return "Higher Potential"
+        #return "Higher Potential"
         return {"Heading":"Higher Potential", "content":contentDictionary["Higher Potential"]}
     elif((flag8>0.8 or flag4>0) or total>1):
-        return "Dyslexia"
+        #return "Dyslexia"
         return {"Heading":"Dyslexia", "content":contentDictionary["Dyslexia"]}
     else:
-        return "Normal"
+        #return "Normal"
         return {"Heading":"Normal", "content":contentDictionary["Normal"]}
 
