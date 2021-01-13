@@ -332,7 +332,7 @@ def ocrfrm1(file_name, image_path):
         content = image_file.read()
     
     # construct an iamge instance
-    image = vision.types.Image(content=content)
+    image = types.Image(content=content)
     
     """
     # or we can pass the image url
