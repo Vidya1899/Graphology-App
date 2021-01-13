@@ -24,6 +24,13 @@ from nltk.stem import PorterStemmer
 porter = PorterStemmer()
 lancaster=LancasterStemmer()
 
+contentDictionary = {
+    "Normal":"Hey there ! Your handwriting is just as that of a normal person and doesn't show any sign  of dyslexia. It also indicates that you have strong focus and function to execute while writing.",
+    "Potential":"Hey there ! Your handwriting indicates that you have a slight chance of having dyslexia. You might be finding it problematic to apply the right amount of pressure while writing and to maintain your sentence alignment.",
+    "Higher potential":"Hey there ! Your handwriting indicates that you have a high chance of having dyslexia. You might be finding it problematic to apply the right amount of pressure while writing and to maintain your sentence alignment. You might also be struggling with focus and function to execute while writing.",
+    "Dyslexia":"Hey there ! Your handwriting indicates that you have a very high chance of having dyslexia. You might be finding it problematic to apply the right amount of pressure while writing"
+}
+
 def ocr1(file_name, image_path):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/alymer/.googleCreds/credentials.json"
     client = vision.ImageAnnotatorClient()
@@ -401,13 +408,17 @@ def runInference(uniqueFilename):
     total=flag1+flag2+flag4+flag5
 
     if(flag1<1 and flag2<1 and flag4<2 and flag5<2 and (flag8>-0.2 or flag8<0.2)):
-        return "Normal"
+        return {"Heading":"Normal", "content":contentDictionary["Normal"]}
     elif(flag8>0.8 or flag7>2):
         return "Potential"
+        return {"Heading":"Potential", "content":contentDictionary["Potential"]}
     elif((flag8>0.8 or flag4>0) or total>0):
         return "Higher Potential"
+        return {"Heading":"Higher Potential", "content":contentDictionary["Higher Potential"]}
     elif((flag8>0.8 or flag4>0) or total>1):
         return "Dyslexia"
+        return {"Heading":"Dyslexia", "content":contentDictionary["Dyslexia"]}
     else:
         return "Normal"
+        return {"Heading":"Normal", "content":contentDictionary["Normal"]}
 
