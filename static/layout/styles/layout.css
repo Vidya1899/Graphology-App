@@ -29,7 +29,7 @@ File: Layout CSS
 #header #logo *{margin:0; padding:0; line-height:1;}
 #header #logo h1{display:inline-block; position:relative; padding-bottom:8px; font-size:32px;}
 #header #logo h1::before, #header #logo h1::after{display:block; position:absolute; bottom:0; width:100%; height:1px; content:"";}/* Creates the 2 lines underneath the logo */
-#header #logo h1::before{bottom:1px;}
+#header #logo h1::before{bottom:3px;}
 #header #logo h1 span{text-transform:uppercase;}
 
 #header ul{}

@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, flash, redirect
 import os
 import uuid
 
-from src.detector import runInference
+#from src.detector import runInference
 
 # set the project root directory as the static folder, you can set others.
 app = Flask(__name__, static_url_path='')
@@ -28,9 +28,10 @@ def upload_image():
             image.save(imageDirectory)
             print("Image saved")
             #return redirect(request.url)
-    response = runInference(uniqueFilename)
+#    response = runInference(uniqueFilename)
     return render_template("success.html", pyArgs = response)
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port='80')
+#    app.run(host='0.0.0.0',port='80')
+     app.run()
