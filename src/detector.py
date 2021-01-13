@@ -393,7 +393,7 @@ def runInference(uniqueFilename):
     #print("Marker4 count:",flag4)
     #print("Marker5count:",flag5)
     for i in sentence_array:
-    flag7=flag7+marker7(i)
+        flag7=flag7+marker7(i)
     #print("Marker7count:",flag7)
 
     flag8=marker8(file_name, image_path)
