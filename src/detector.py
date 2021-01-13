@@ -6,7 +6,7 @@ Created on Tue Sep 29 14:39:17 2020
 """
 import os, io
 from google.cloud import vision
-from google.cloud.vision import types
+from google.cloud.vision_v1 import types
 
 from spacy.lang.en import English
 # Load English tokenizer, tagger, parser, NER and word vectors
