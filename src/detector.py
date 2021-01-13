@@ -6,7 +6,7 @@ Created on Tue Sep 29 14:39:17 2020
 """
 import os, io
 from google.cloud import vision
-from google.cloud.vision import types
+from google.cloud.vision_v1 import types
 
 from spacy.lang.en import English
 # Load English tokenizer, tagger, parser, NER and word vectors
@@ -25,13 +25,13 @@ porter = PorterStemmer()
 lancaster=LancasterStemmer()
 
 def ocr1(file_name, image_path):
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r""
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/alymer/.googleCreds/credentials.json"
     client = vision.ImageAnnotatorClient()
 
     with io.open(image_path, 'rb') as image_file:
         content = image_file.read()
 
-    image = vision.types.Image(content=content)
+    image = types.Image(content=content)
     response = client.document_text_detection(image=image)
 
     docText = response.full_text_annotation.text
@@ -332,7 +332,7 @@ def ocrfrm1(file_name, image_path):
         content = image_file.read()
     
     # construct an iamge instance
-    image = vision.types.Image(content=content)
+    image = types.Image(content=content)
     
     """
     # or we can pass the image url
@@ -360,8 +360,7 @@ def ocrfrm1(file_name, image_path):
 
 ############################## Driver code ##########################################
 def runInference(uniqueFilename):
-    file_name= uniqueFilename
-
+    file_name= os.path.join("uploads/", uniqueFilename)
     sampl_no=1
     image_path = os.path.join("uploads/", uniqueFilename)
     ocr=ocr1(file_name, image_path)
@@ -412,11 +411,3 @@ def runInference(uniqueFilename):
     else:
         return "Normal"
 
-    #for i in sentence_array:
-    #x=marker7(i)
-    #print("marker7:",x)
-
-    #print("ocr",out)
-    #ocr=out.rstrip('\n')
-
-    #print(convert(str(word)))
