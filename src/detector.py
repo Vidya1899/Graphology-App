@@ -25,7 +25,7 @@ porter = PorterStemmer()
 lancaster=LancasterStemmer()
 
 def ocr1(file_name, image_path):
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r""
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/alymer/.googleCreds/credentials.json"
     client = vision.ImageAnnotatorClient()
 
     with io.open(image_path, 'rb') as image_file:
@@ -360,8 +360,7 @@ def ocrfrm1(file_name, image_path):
 
 ############################## Driver code ##########################################
 def runInference(uniqueFilename):
-    file_name= uniqueFilename
-
+    file_name= os.path.join("uploads/", uniqueFilename)
     sampl_no=1
     image_path = os.path.join("uploads/", uniqueFilename)
     ocr=ocr1(file_name, image_path)
@@ -394,7 +393,7 @@ def runInference(uniqueFilename):
     #print("Marker4 count:",flag4)
     #print("Marker5count:",flag5)
     for i in sentence_array:
-        flag7=flag7+marker7(i)
+    flag7=flag7+marker7(i)
     #print("Marker7count:",flag7)
 
     flag8=marker8(file_name, image_path)
@@ -412,11 +411,3 @@ def runInference(uniqueFilename):
     else:
         return "Normal"
 
-    #for i in sentence_array:
-    #x=marker7(i)
-    #print("marker7:",x)
-
-    #print("ocr",out)
-    #ocr=out.rstrip('\n')
-
-    #print(convert(str(word)))
