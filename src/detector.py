@@ -31,7 +31,7 @@ def ocr1(file_name, image_path):
     with io.open(image_path, 'rb') as image_file:
         content = image_file.read()
 
-    image = vision.types.Image(content=content)
+    image = types.Image(content=content)
     response = client.document_text_detection(image=image)
 
     docText = response.full_text_annotation.text
