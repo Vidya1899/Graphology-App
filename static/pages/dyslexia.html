@@ -137,11 +137,20 @@ Licence URI: https://www.os-templates.com/template-terms
       <p>Portortornec condimenterdum eget consectetuer condis consequam pretium pellus sed mauris enim. Puruselit mauris nulla hendimentesque elit semper nam a sapien urna sempus.</p-->
       <p>Submit samples and see your result.</p>
       <p class="Right"><a class="btn" href="#">Self Evaluate <i class="fas fa-angle-right"></i></a></p>
-      <form action="/upload-image" method="post" enctype="multipart/form-data">
-        <!--Category:      <input type="text" name="category" /-->
-        Select a file: <input type="file" name="upload" />
-        <input type="submit" value="Start upload" />
+      <form action="/upload-image" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <label>Select image</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="image" id="image">
+            <label class="custom-file-label" for="image">Select image...</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Upload</button>
+
       </form>
+
     </div>
     <div class="one_half"> 
       <!-- ################################################################################################ -->
