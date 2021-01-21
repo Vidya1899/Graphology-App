@@ -47,7 +47,7 @@ def main(filename):
 	# sample = cv2.imread(sys.argv[1])
 	#rpath = '/Users/yashbhat/Graphology/api/'
 	# sample = cv2.imread(filename)
-	sample = cv2.imread('./sample/'+filename)
+	sample = cv2.imread('uploads/'+filename)
 	# height,width = sample.shape[0],sample.shape[1]
 	# print("h,w:",height,width)
 	# sample = cv2.resize(sample, dsize=(500, int(500 * height / width)), interpolation=cv2.INTER_AREA)
@@ -81,7 +81,7 @@ def main(filename):
 
 	#read all words extracted from results
 	# words = [cv2.imread(file) for file in glob.glob("./words/*")]
-	words = [cv2.imread(file) for file in glob.glob('download/words/*')]
+	words = [cv2.imread(file) for file in glob.glob('samples/words/*')]
 
 	# print("Select ts:")
 	#words_t = [cv2.imread(file) for file in glob.glob("./words/*")]
