@@ -235,7 +235,7 @@ def letter_seg(lines_img, x_lines, i):
 			except:
 				continue
 			# cv2.imwrite('./segmented_img/img1/'+str(i+1)+'_'+str(word)+'_'+str(letter_index)+'.jpg', 255-letter_img)
-			cv2.imwrite('download/characters/' + str(i + 1) + '_' + str(word) + '_' + str(letter_index) + '.jpg',letter_img)
+			cv2.imwrite('../samples/characters/' + str(i + 1) + '_' + str(word) + '_' + str(letter_index) + '.jpg',letter_img)
 		else:
 			x_linescopy.pop(0)
 			word += 1
@@ -246,7 +246,7 @@ def letter_seg(lines_img, x_lines, i):
 			except:
 				continue
 			# cv2.imwrite('./segmented_img/img1/'+str(i+1)+'_'+str(word)+'_'+str(letter_index)+'.jpg', 255-letter_img)
-			cv2.imwrite('download/characters/' + str(i + 1) + '_' + str(word) + '_' + str(letter_index) + '.jpg',letter_img)
+			cv2.imwrite('../samples/characters/' + str(i + 1) + '_' + str(word) + '_' + str(letter_index) + '.jpg',letter_img)
 			# print(letter[e][0],x_linescopy[0], word)
 						
 		
@@ -263,7 +263,7 @@ def main(src_img):
 	# src_img= cv2.imread(sys.argv[1], 1)
 
 	#remove existing images
-	dir_path = 'download/characters'
+	dir_path = '../samples/characters'
 	try:
 		shutil.rmtree(dir_path)
 		os.mkdir(dir_path)
