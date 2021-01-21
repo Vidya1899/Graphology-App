@@ -81,7 +81,7 @@ def main(filename):
 
 	#read all words extracted from results
 	# words = [cv2.imread(file) for file in glob.glob("./words/*")]
-	words = [cv2.imread(file) for file in glob.glob('samples/words/*')]
+	words = [cv2.imread(file) for file in glob.glob('samples/*')]
 
 	# print("Select ts:")
 	#words_t = [cv2.imread(file) for file in glob.glob("./words/*")]
