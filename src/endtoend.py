@@ -162,18 +162,18 @@ def main(filename):
 
 	# print("put t in folders 't' ")
 	# ts = [file for file in glob.glob("./ts/*")]
-	characters = [cv2.imread(file,0) for file in glob.glob('download/characters/*')]
+	characters = [cv2.imread(file,0) for file in glob.glob('samples/characters/*')]
 	# isitt = np.array(characters).reshape(len(characters), 28, 28, 1)
 	isitt = np.array(characters).reshape(len(characters), 28, 28, 1)
 
 	#detect 't' from characters
-	model1 = load_model('download/model1.h5')
+	model1 = load_model('models/model1.h5')
 	preres = model1.predict(isitt)
 	res = np.argmax(preres, axis=1)
 	# print("Result for t :",res)
 
 	# remove existing images
-	dir_path = 'download/ts'
+	dir_path = 'samples/ts'
 	try:
 		shutil.rmtree(dir_path)
 		os.mkdir(dir_path)
@@ -186,7 +186,7 @@ def main(filename):
 		if r == 0:
 			ts.append(characters[i])
 			# print(preres[i])
-			cv2.imwrite('download/ts/'+'ts'+str(i)+'.jpg',characters[i])
+			cv2.imwrite('samples/ts/'+'ts'+str(i)+'.jpg',characters[i])
 
 	if len(ts) < 1:
 		console_display.append('limited')
@@ -288,7 +288,7 @@ def main(filename):
 	# console_display.append(str(f5))
 
 	# print("total time ---- %s ----",time.time()-start_time)
-	console_display.append("total time ---- %s ----" + str(time.time()-start_time))
+	#console_display.append("total time ---- %s ----" + str(time.time()-start_time))
 	return console_display
 
 
