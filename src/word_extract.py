@@ -41,7 +41,7 @@ def extract_words(image):
 	#uniform scale of input images
 	# print("=======================================================================")
 
-	dir_path = 'download/words'
+	dir_path = 'samples/words'
 	try:
 		shutil.rmtree(dir_path)
 		os.mkdir(dir_path)
@@ -114,7 +114,7 @@ def extract_words(image):
 
 		# show ROI
 		# cv2.imshow('segment no:'+str(i),roi)
-		cv2.imwrite(os.path.join('download/words/', 'res_' + str(i) + '.png'), roi)
+		cv2.imwrite(os.path.join('samples/words/', 'res_' + str(i) + '.png'), roi)
 		cv2.rectangle(draw_img,(x,y),( x + w, y + h ),(90,0,255),2)
 		# f.add_subplot(1, n, i + 1)
 		# plt.imshow(roi)
