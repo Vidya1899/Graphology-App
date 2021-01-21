@@ -11,18 +11,18 @@ import shutil
 #import seaborn as sns
 #import matplotlib.pyplot as plt
 from statistics import mean, mode
-from download.word_extract import extract_words
-from download.baseline2 import baseline_extract
-from download.baseline2 import get_size
+from word_extract import extract_words
+from baseline2 import baseline_extract
+from baseline2 import get_size
 # import statistics as stat
 #from click_and_crop import get_ts
 #from click_and_crop import get_hw
 #from opencv_text_detection.text_detection import textdetection
-from download.tbar import tbar_length
-from download.hori import get_hori
-from download.hori import get_f2
+from tbar import tbar_length
+from hori import get_hori
+from hori import get_f2
 import time
-import download.character_extract as ce
+import character_extract as ce
 from keras.models import load_model
 import os
 
