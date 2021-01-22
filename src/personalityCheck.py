@@ -23,7 +23,7 @@ def display_images(im):
 	cv2.waitKey(0)
 
 def runInference(filename):
-	sample = cv2.imread('uploads/'+filename)
+	sample = cv2.imread(filename)
 	print("Handwriting Analysis...")
 	extract_words(sample)
 	words = [cv2.imread(file) for file in glob.glob('samples/*')]
