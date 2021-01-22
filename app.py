@@ -28,7 +28,7 @@ def upload_image_dyslexia():
             image.save(imageDirectory)
             print("Image saved")
             #return redirect(request.url)
-    response = dyslexia(uniqueFilename)
+    response = dyslexia(imageDirectory)
     return render_template("dyslexia-report.html", pyArgs = response)
 
 @app.route("/upload-image-personality", methods=["GET", "POST"])
@@ -42,7 +42,7 @@ def upload_image_personality():
             image.save(imageDirectory)
             print("Image saved")
             #return redirect(request.url)
-    response = personality(uniqueFilename)
+    response = personality(imageDirectory)
     return render_template("personality-report.html", pyArgs = response)
 
 if __name__ == "__main__":

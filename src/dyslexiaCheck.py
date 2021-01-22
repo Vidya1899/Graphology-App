@@ -367,9 +367,9 @@ def ocrfrm1(file_name, image_path):
 
 ############################## Driver code ##########################################
 def runInference(uniqueFilename):
-    file_name= os.path.join("uploads/", uniqueFilename)
+    file_name= uniqueFilename #os.path.join("uploads/dyslexia/", uniqueFilename)
     sampl_no=1
-    image_path = os.path.join("uploads/", uniqueFilename)
+    image_path = uniqueFilename #os.path.join("uploads/", uniqueFilename)
     ocr=ocr1(file_name, image_path)
     ocr_list=wordpasser(ocr)
     ocrofmarker1=ocrfrm1(file_name, image_path)
