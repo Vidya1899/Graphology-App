@@ -137,7 +137,19 @@ Licence URI: https://www.os-templates.com/template-terms
       <p> </p>
       <h1>STEP 2</h1>
       <p>Submit samples and see what results the graphology tool pulls up.</p>
-      <p class="Right"><a class="btn" href="#">Self Evaluate <i class="fas fa-angle-right"></i></a></p>
+      <form action="/upload-image-personality" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <label>Select image</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="image" id="image">
+            <label class="custom-file-label" for="image">Select image...</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Upload ></button>
+
+      </form>
       <br></br>
     </div>
     <div class="one_half"> 
