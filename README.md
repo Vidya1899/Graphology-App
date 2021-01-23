@@ -25,4 +25,7 @@
    #command with our pid in it
    sudo kill -9 <pid>
    ```
+    <p align="center">
+    <img src="forReadme/process.png" alt="alt text"width="700" height="100">
+    </p>
 5. Now run, `sudo python3 app.py &`
