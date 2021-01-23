@@ -2,8 +2,14 @@
 ### Initial Setup
 1. Create a free-tier VM instance from the GCP compute engine console
 2. Configure gcloud setup by following [these instructions](https://cloud.google.com/deployment-manager/docs/step-by-step-guide/installation-and-setup)
-3. SSH into our pod by using the gcloud command available in the console.
+3. SSH into our pod by using the gcloud command available in the console in the VM instances page.
+    <p align="center">
+    <img src="forReadme/sshCommand.png" alt="alt text"width="600" height="200">
+    </p>
 4. Make sure the port 80 is open for HTTP, TCP protocol.
+   <p align="center">
+    <img src="forReadme/network.png" alt="alt text"width="600" height="200">
+    </p>
 5. Install flask, and other dependencies required to run our inferencing scripts
 6. Clone Graphalogy repository
 7. To start the server. Change directory to our repository and run `sudo python3 app.py &`
